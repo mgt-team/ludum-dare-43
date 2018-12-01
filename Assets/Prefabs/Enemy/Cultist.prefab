@@ -95,6 +95,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _fightDistance: 3
   _speed: 1
+  _damageConfig: {fileID: 11400000, guid: 1920f52403ff0044fbd3fbbcd934d8b4, type: 2}
 --- !u!114 &114335566180704972
 MonoBehaviour:
   m_ObjectHideFlags: 1
