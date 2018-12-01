@@ -13,8 +13,11 @@ public class ZoneExitController : MonoBehaviour {
     [SerializeField]
     private float _zoneRadius;
 
+    [SerializeField]
+    private float _distanceOfForce;
+
     private GameObject _player;
-    public bool _playerIsOut;
+    private float timer;
 
     private void Awake()
     {
@@ -27,18 +30,16 @@ public class ZoneExitController : MonoBehaviour {
             float distance = Vector2.Distance(_center.position, _player.transform.position);
             if (distance > _zoneRadius)
             {
-                _player.transform.position = Vector2.Lerp(_player.transform.position, _center.position, Time.deltaTime * distance);
-                _playerIsOut = false;
+                timer = _distanceOfForce;
+            }
+            if(timer > 0)
+            {
+                _player.transform.position = Vector2.LerpUnclamped(_player.transform.position, _center.position, Time.deltaTime * distance * _forcePower);
+                timer -= Time.deltaTime;
             }
         }
 
         Debug.DrawLine(_center.position, new Vector2(_center.position.x, _center.position.y + _zoneRadius), Color.red);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == TagManager.GetTagNameByEnum(TagEnum.Player))
-            _playerIsOut = true;
     }
 
 }
