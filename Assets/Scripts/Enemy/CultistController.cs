@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CultistController : MonoBehaviour {
+public class CultistController : EnemyBehaviorController {
 
     [SerializeField]
     private Transform _target;
@@ -23,12 +23,10 @@ public class CultistController : MonoBehaviour {
         float distance = Vector2.Distance(transform.position, _target.position);
         if (distance > _fightDistance)
             transform.position = Vector2.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
-        else
-            MakeSacrifice();
 	}
 
-    private void MakeSacrifice()
-    {
-
-    }
+	public override void SetTarget(Transform targetTransform)
+	{
+		_target = targetTransform;
+	}
 }
