@@ -16,7 +16,7 @@ public class EnemyGenerator : MonoBehaviour {
     private float _zoneRadius;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         _zoneRadius = GetComponent<ZoneExitController>().GetZoneRadius();
         _enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
 	}

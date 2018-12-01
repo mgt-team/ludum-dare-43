@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private WeaponConfig _weaponConfig;
 	
 	private Animator _animator;
+	public bool InAttack { get; private set; }
 
 	private void Awake()
 	{
@@ -18,11 +19,12 @@ public class Weapon : MonoBehaviour
 	public void Attack()
 	{
 		_animator.SetTrigger(WeaponAnimationConsts.Attack);
+		InAttack = true;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
+		if (InAttack && TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
 		{
 			Debug.Log("Weapon beats " + other.gameObject.name);
 			var damageReceiver = other.gameObject.GetComponent<DamageReceiver>();
