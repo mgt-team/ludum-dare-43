@@ -13,6 +13,9 @@ public class CultistController : EnemyBehaviorController {
     [SerializeField]
     private float _speed;
 
+    [SerializeField]
+    private DamageConfig _damageConfig;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -25,6 +28,8 @@ public class CultistController : EnemyBehaviorController {
             float distance = Vector2.Distance(transform.position, _target.position);
             if (distance > _fightDistance)
                 transform.position = Vector2.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
+            else if (distance <= _fightDistance)
+                Attack();
         }
 	}
 
@@ -32,4 +37,10 @@ public class CultistController : EnemyBehaviorController {
 	{
 		_target = targetTransform;
 	}
+
+    private void Attack()
+    {
+        var damageReceiver = GameObject.Find("Player").GetComponent<DamageReceiver>();
+        damageReceiver.ReceiveDamage(new DamageInfo(_damageConfig.Damage, transform.position));
+    }
 }
