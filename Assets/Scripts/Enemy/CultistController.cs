@@ -16,10 +16,7 @@ public class CultistController : EnemyBehaviorController {
     [SerializeField]
     private DamageConfig _damageConfig;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	[SerializeField] private Weapon _weapon;
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +37,6 @@ public class CultistController : EnemyBehaviorController {
 
     private void Attack()
     {
-        var damageReceiver = GameObject.Find("Player").GetComponent<DamageReceiver>();
-        damageReceiver.ReceiveDamage(new DamageInfo(_damageConfig.Damage, transform.position));
+        _weapon.Attack();
     }
 }
