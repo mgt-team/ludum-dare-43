@@ -13,15 +13,12 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     private EnemyBehaviorController _enemyBehaviorController;
 
-    private void Awake()
-    {
-        _enemyBehaviorController = GetComponent<EnemyBehaviorController>();
-        _enemyBehaviorController.SetTarget(_target);
-    }
-
     public void SetTarget(Transform target)
     {
         _target = target;
+        _enemyBehaviorController = GetComponent<EnemyBehaviorController>();
+        if (_enemyBehaviorController != null)
+            _enemyBehaviorController.SetTarget(_target);
     }
 
     public EnemyTypeEnum GetType()
