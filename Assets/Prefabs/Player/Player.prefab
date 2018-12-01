@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponTarget: 2
+  _weaponConfig: {fileID: 0}
 --- !u!114 &114913190432258678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,8 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shiftPower: {x: 10, y: 10}
-  _sprintPower: 0
-  _timeSprint: 0
+  _sprintPower: 2
+  _timeSprint: 0.2
   _weapon: {fileID: 114635365031818120}
 --- !u!114 &114915341794924076
 MonoBehaviour:
