@@ -23,7 +23,7 @@ public class Liveble : MonoBehaviour
 	{
 		CurrentHp = HpConfig.Hp;
 		_isAlive = true;
-		Debug.Log(this + "Current HP: " + CurrentHp);
+		Debug.Log(this + "Init HP: " + CurrentHp);
 	}
 
 	public void IncreaseHp(int hp)
