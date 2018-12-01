@@ -13,19 +13,29 @@ public class EnemyGenerator : MonoBehaviour {
     [SerializeField]
     private EnemyManager _enemyManager;
 
+    [SerializeField]
+    private float _generatingTime;
+    private float _timer;
+
     private float _zoneRadius;
 
 	// Use this for initialization
 	void Awake () {
         _zoneRadius = GetComponent<ZoneExitController>().GetZoneRadius();
         _enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+        _timer = _generatingTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (_timer > 0)
+        {
+            _timer -= Time.deltaTime;
+        }
+        else
         {
             GenerateRandomEnemy();
+            _timer = _generatingTime;
         }
 	}
 

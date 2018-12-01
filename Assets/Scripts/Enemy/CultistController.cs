@@ -16,8 +16,10 @@ public class CultistController : EnemyBehaviorController {
     [SerializeField]
     private DamageConfig _damageConfig;
 
-	// Use this for initialization
-	void Start () {
+    public bool InAttack { get; private set; }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
