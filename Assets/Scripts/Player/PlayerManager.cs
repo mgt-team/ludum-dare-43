@@ -10,11 +10,12 @@ public class PlayerManager : MonoBehaviour
     
     private MoveController _moveController;
     private Animator _animator;
+    private AttackController _attackController;
     
     private void Awake()
     {
         _moveController = GetComponent<MoveController>();
-
+        _attackController = GetComponent<AttackController>();
     }
 
     // Use this for initialization
@@ -27,6 +28,11 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         UpdatePlayerMovement();
+
+        if (_attackController.IsAttack())
+        {
+            Attack();
+        }
     }
 
     private void UpdatePlayerMovement()
@@ -37,5 +43,10 @@ public class PlayerManager : MonoBehaviour
             _player.StopAnimation();
         else
             _player.StartAnimation();*/
+    }
+
+    private void Attack()
+    {
+        _player.Attack();
     }
 }
