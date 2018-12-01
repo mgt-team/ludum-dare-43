@@ -15,11 +15,14 @@ public class Enemy : MonoBehaviour {
     
     private Liveble _liveble;
 
-    private void Awake()
+    public void Init(EnemyInitInfo enemyInitInfo)
     {
         _liveble = GetComponent<Liveble>();
+        _liveble.InitHp();
+        
+        SetTarget(enemyInitInfo.Target);
     }
-
+    
     public void SetTarget(Transform target)
     {
         _target = target;
