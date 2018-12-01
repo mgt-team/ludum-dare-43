@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
 
 	[SerializeField] private TagEnum _weaponTarget;
+	[SerializeField] private WeaponConfig _weaponConfig;
 	
 	private Animator _animator;
 
@@ -23,7 +24,9 @@ public class Weapon : MonoBehaviour
 	{
 		if (TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
 		{
-			Debug.Log("Weapon beats " + other.gameObject.name);	
+			Debug.Log("Weapon beats " + other.gameObject.name);
+			var damageReceiver = other.gameObject.GetComponent<DamageReceiver>();
+			damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
 		}
 	}
 }
