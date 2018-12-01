@@ -5,6 +5,7 @@ public class DamageReceiver : MonoBehaviour
 {
 
 	private Liveble _liveble;
+	private DamageEffect _damageEffect;
 	
 	// Use this for initialization
 	private void Start ()
@@ -15,6 +16,7 @@ public class DamageReceiver : MonoBehaviour
 	public void ReceiveDamage(DamageInfo damageInfo)
 	{
 		_liveble.DecreaseHp(damageInfo.DamageCount);
+		_damageEffect.OnDamageReceived(damageInfo);
 	}
 	
 }
