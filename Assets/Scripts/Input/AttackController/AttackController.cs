@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class AttackController : MonoBehaviour {
 
     public abstract bool IsAttack();
+
+    public abstract bool IsSprint();
 }
