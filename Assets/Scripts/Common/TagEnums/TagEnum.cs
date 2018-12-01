@@ -2,5 +2,5 @@
 {
     Player, 
     Zone,
-    Coin
+    Enemy
 }
