@@ -11,10 +11,12 @@ public class CameraController : MonoBehaviour {
     private float _shakePower;
 
     private float _timer;
+    private Vector3 _startPosition;
 
     // Use this for initialization
     void Start () {
         _camera = Camera.main;
+        _startPosition = _camera.transform.position;
         _timer = 0;
     }
 	
@@ -28,11 +30,11 @@ public class CameraController : MonoBehaviour {
             _timer -= Time.deltaTime * 2;
         }
         if (_timer <= 0)
-            _camera.transform.localPosition = Vector2.zero;
+            _camera.transform.localPosition = _startPosition;
     }
 
     private void ShakeCamera(float shakePower)
     {
-        transform.localPosition = new Vector3(Random.Range(-shakePower, shakePower), Random.Range(-shakePower, shakePower));
+        transform.localPosition = new Vector3(Random.Range(-shakePower, shakePower), Random.Range(-shakePower, shakePower), transform.localPosition.z);
     }
 }
