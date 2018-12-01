@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CommonDamageEffect : DamageEffect
 {
+    [SerializeField]
+    private float _damagePower;
+
+    private Animator _animator;
+
     public override void OnDamageReceived(DamageInfo damageInfo)
     {
         DamageForce(damageInfo); 
@@ -11,6 +16,17 @@ public class CommonDamageEffect : DamageEffect
 
     private void DamageForce(DamageInfo damageInfo)
     {
-        transform.position = Vector2.Lerp(transform.position, damageInfo.AssaulterPosition, Time.deltaTime * damageInfo.DamageCount);
+        Blinking();
+        transform.position = Vector2.MoveTowards(transform.position, -damageInfo.AssaulterPosition * damageInfo.DamageCount * _damagePower, Time.deltaTime * damageInfo.DamageCount * _damagePower);
+    }
+
+    private void Blinking()
+    {
+        _animator.SetTrigger(WeaponAnimationConsts.Damage);
+    }
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
     }
 }
