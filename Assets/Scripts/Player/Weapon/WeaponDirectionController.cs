@@ -8,11 +8,16 @@ public class WeaponDirectionController : MonoBehaviour {
 	private Transform _centerPoint;
 	
 	private Vector3 _direction;
-    
+	private AngleGetter _angleGetter;
+
+	private void Awake()
+	{
+		_angleGetter = GetComponent<AngleGetter>();
+	}
+
 	private void Update()
 	{
-		var mouseAngle = MouseUtils.GetMouseAndTargetAngle(_centerPoint.position);
-		LookAtCursor(mouseAngle);
+		LookAtCursor(_angleGetter.GetCurrentAngle(_centerPoint));
 	}
 
 	private void LookAtCursor(float mouseAngle)
