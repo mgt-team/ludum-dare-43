@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 70323925207241128}
   - component: {fileID: 114252941671027468}
   - component: {fileID: 114401665301565188}
+  - component: {fileID: 114558794161372658}
+  - component: {fileID: 114667698596916686}
+  - component: {fileID: 114523867475914172}
   m_Layer: 0
   m_Name: Cultist
   m_TagString: Enemy
@@ -86,6 +89,40 @@ MonoBehaviour:
   _type: 0
   _target: {fileID: 0}
   _enemyBehaviorController: {fileID: 114252941671027468}
+--- !u!114 &114523867475914172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848141073116700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dab03d538cd505408aead096f8ae285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114558794161372658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848141073116700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3d13b820f932645b2b8d9cfa8929eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114667698596916686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848141073116700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a267ea8f08ac54347b630844fe76b9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpConfig: {fileID: 11400000, guid: 3c5ee5bb3ff82f041a9b5ab2a3eb868b, type: 2}
 --- !u!212 &212532087808940794
 SpriteRenderer:
   m_ObjectHideFlags: 1
