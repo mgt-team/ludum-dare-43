@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4068290885616068}
   - component: {fileID: 212850793661259868}
   m_Layer: 0
-  m_Name: circle_background 1
+  m_Name: elipse_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -511616931
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: ea8206811e1df5f4e856c8ae45331385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
