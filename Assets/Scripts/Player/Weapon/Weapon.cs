@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private WeaponConfig _weaponConfig;
 	
 	private Animator _animator;
+	private float _currentAttackAnimationTime = 0;
+	
 	public bool InAttack { get; private set; }
 
 	private void Awake()
@@ -16,10 +18,23 @@ public class Weapon : MonoBehaviour
 		_animator = GetComponent<Animator>();
 	}
 
+	private void Update()
+	{
+		if (_currentAttackAnimationTime <= 0)
+		{
+			InAttack = false;
+		}
+		else
+		{
+			_currentAttackAnimationTime -= Time.deltaTime;
+		}
+	}
+
 	public void Attack()
 	{
 		_animator.SetTrigger(WeaponAnimationConsts.Attack);
 		InAttack = true;
+		_currentAttackAnimationTime = _weaponConfig.WeaponAttackAnimationTime;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

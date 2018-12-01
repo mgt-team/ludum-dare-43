@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e71d7b444d8c54794f0d8de2b3e53c, type: 3}
   m_Name: PlayerWeaponConfig
   m_EditorClassIdentifier: 
-  WeaponDamage: 10
+  WeaponDamage: 3
+  WeaponAttackAnimationTime: 1

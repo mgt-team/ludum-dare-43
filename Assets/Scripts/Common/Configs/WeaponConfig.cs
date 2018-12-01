@@ -4,4 +4,5 @@
 public class WeaponConfig : ScriptableObject
 {
     public int WeaponDamage;
+    public float WeaponAttackAnimationTime;
 }
