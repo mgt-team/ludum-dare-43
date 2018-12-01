@@ -12,17 +12,24 @@ public class Player: MonoBehaviour {
 	private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+	private Liveble _liveble;
 
 	private void Awake()
 	{
 		_rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+		_liveble = GetComponent<Liveble>();
 	}
 
 	// Use this for initialization
 	void Start () {
 		
+	}
+
+	public void Init()
+	{
+		_liveble.InitHp();
 	}
 
     public void StopAnimation()

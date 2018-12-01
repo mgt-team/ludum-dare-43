@@ -12,9 +12,9 @@ public class DamageReceiver : MonoBehaviour
 		_liveble = GetComponent<Liveble>();
 	}
 
-	public void ReceiveDamage(int damage)
+	public void ReceiveDamage(DamageInfo damageInfo)
 	{
-		_liveble.DecreaseHp(damage);
+		_liveble.DecreaseHp(damageInfo.DamageCount);
 	}
 	
 }

@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        _player.Init();
     }
 
     // Update is called once per frame
