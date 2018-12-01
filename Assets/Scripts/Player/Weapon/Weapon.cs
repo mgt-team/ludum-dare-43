@@ -19,12 +19,11 @@ public class Weapon : MonoBehaviour
 		_animator.SetTrigger(WeaponAnimationConsts.Attack);
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log("Weapon: OnCollisionEnter");
 		if (TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
 		{
-			Debug.Log("Weapon beats" + other.gameObject.name);	
+			Debug.Log("Weapon beats " + other.gameObject.name);	
 		}
 	}
 }
