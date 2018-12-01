@@ -7,12 +7,20 @@ public class Player: MonoBehaviour {
 	[SerializeField]
 	private Vector2 _shiftPower;
 
+    [SerializeField]
+    private float _sprintPower;
+
+    [SerializeField]
+    private float _timeSprint;
+
 	[SerializeField] private Weapon _weapon;
 
 	private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
 	private Liveble _liveble;
+    private bool _isSprint;
+    private float _timerForSprint;
 
 	private void Awake()
 	{
@@ -24,7 +32,7 @@ public class Player: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        _isSprint = false;
 	}
 
 	public void Init()
@@ -46,10 +54,21 @@ public class Player: MonoBehaviour {
 	{
 		_weapon.Attack();
 	}
+
+    public void Sprint()
+    {
+        _isSprint = true;
+        _timerForSprint = _timeSprint;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (_timerForSprint > 0)
+        {
+            _timerForSprint -= Time.deltaTime;
+        }
+        else if (_timerForSprint <= 0)
+            _isSprint = false;
 	}
 	
 	public void SetVelocity(Vector2 direction)
@@ -71,7 +90,10 @@ public class Player: MonoBehaviour {
 		{
 			shiftPowerY *= 1.5f;
 		}
-		
+        if (_isSprint)
+        {
+            direction *= _sprintPower;
+        }
 		_rigidbody.velocity = new Vector3(direction.x * _shiftPower.x, direction.y * shiftPowerY);
 	}
 }

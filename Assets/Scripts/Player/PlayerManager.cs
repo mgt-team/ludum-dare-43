@@ -33,6 +33,12 @@ public class PlayerManager : MonoBehaviour
         {
             Attack();
         }
+
+        if (_attackController.IsSprint())
+        {
+            _player.Sprint();
+        }
+            
     }
 
     private void UpdatePlayerMovement()
