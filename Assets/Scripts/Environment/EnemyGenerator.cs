@@ -37,6 +37,8 @@ public class EnemyGenerator : MonoBehaviour {
 
     private Vector2 GetRandomPosition()
     {
-        return new Vector2(Random.Range(_zoneRadius, _zoneRadius + _distanceOfGenerating), Random.Range(_zoneRadius, _zoneRadius + _distanceOfGenerating));
+        float randomAngle = Random.Range(0, 360);
+        return new Vector2(Mathf.Sin(randomAngle), Mathf.Cos(randomAngle)) * (_zoneRadius + _distanceOfGenerating);
     }
+
 }
