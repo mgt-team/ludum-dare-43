@@ -8,15 +8,23 @@ public class DamageReceiver : MonoBehaviour
 	private DamageEffect _damageEffect;
 	
 	// Use this for initialization
-	private void Start ()
+	private void Awake()
 	{
 		_liveble = GetComponent<Liveble>();
+		_damageEffect = GetComponent<DamageEffect>();
 	}
 
 	public void ReceiveDamage(DamageInfo damageInfo)
 	{
 		_liveble.DecreaseHp(damageInfo.DamageCount);
-		_damageEffect.OnDamageReceived(damageInfo);
+		if (_damageEffect == null)
+		{
+			Debug.LogError("There is no damage effect for " + gameObject.name);
+		}
+		else
+		{
+			_damageEffect.OnDamageReceived(damageInfo);
+		}
 	}
 	
 }

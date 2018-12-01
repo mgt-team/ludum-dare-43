@@ -12,6 +12,13 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField]
     private EnemyBehaviorController _enemyBehaviorController;
+    
+    private Liveble _liveble;
+
+    private void Awake()
+    {
+        _liveble = GetComponent<Liveble>();
+    }
 
     public void SetTarget(Transform target)
     {
