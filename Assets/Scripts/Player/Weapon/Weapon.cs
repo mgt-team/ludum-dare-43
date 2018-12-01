@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
+		Debug.Log("Weapon: OnCollisionEnter");
 		if (TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
 		{
 			Debug.Log("Weapon beats" + other.gameObject.name);	

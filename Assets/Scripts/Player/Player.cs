@@ -54,6 +54,10 @@ public class Player: MonoBehaviour {
 	
 	public void SetVelocity(Vector2 direction)
 	{
+		//_rigidbody.MovePosition(direction * _shiftPower );
+		/*_rigidbody.AddForce(direction * _shiftPower);
+		return;*/
+		
 		if (direction.x != 0 || direction.y != 0)
 			direction *= Mathf.Sqrt(2) / 2;
 
