@@ -15,7 +15,7 @@ public class CultistController : EnemyBehaviorController {
 
     [SerializeField]
     private DamageConfig _damageConfig;
-
+    
 	[SerializeField] private Weapon _weapon;
 	
 	// Update is called once per frame
