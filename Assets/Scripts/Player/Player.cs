@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player: MonoBehaviour {
 	
 	[SerializeField]
-	private Vector2 _shiftPower;	
+	private Vector2 _shiftPower;
+
+	[SerializeField] private Weapon _weapon;
 
 	private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -32,6 +34,11 @@ public class Player: MonoBehaviour {
     {
         _animator.SetBool("isRun", true);
     }
+
+	public void Attack()
+	{
+		_weapon.Attack();
+	}
 	
 	// Update is called once per frame
 	void Update () {
