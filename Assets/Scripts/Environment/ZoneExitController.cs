@@ -42,4 +42,9 @@ public class ZoneExitController : MonoBehaviour {
         Debug.DrawLine(_center.position, new Vector2(_center.position.x, _center.position.y + _zoneRadius), Color.red);
     }
 
+    public float GetZoneRadius()
+    {
+        return _zoneRadius;
+    }
+
 }
