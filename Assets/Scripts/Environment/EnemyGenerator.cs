@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour {
 
     [SerializeField]
-    private List<Enemy> Enemys;
+    private List<Enemy> _enemies;
 
     [SerializeField]
     private float _distanceOfGenerating;
@@ -31,7 +31,7 @@ public class EnemyGenerator : MonoBehaviour {
 
     private void GenerateRandomEnemy()
     {
-        var enemy = Instantiate(Enemys[Random.Range(0, Enemys.Count)], GetRandomPosition(), Quaternion.identity);
+        var enemy = Instantiate(_enemies[Random.Range(0, _enemies.Count)], GetRandomPosition(), Quaternion.identity);
         _enemyManager.InitEnemy(enemy);
     }
 
