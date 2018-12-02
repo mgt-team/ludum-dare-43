@@ -45,6 +45,9 @@ GameObject:
   - component: {fileID: 114915341794924076}
   - component: {fileID: 114010630136272260}
   - component: {fileID: 70321263519435498}
+  - component: {fileID: 114847418845000640}
+  - component: {fileID: 114328609294265940}
+  - component: {fileID: 95894597328837424}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,6 +210,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95894597328837424
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091871099331152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e4982bc013ed03418f95a92e2f54e5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114010630136272260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,6 +240,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpConfig: {fileID: 11400000, guid: 48c83cec1c547364d9668793185d1624, type: 2}
+--- !u!114 &114328609294265940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091871099331152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3d13b820f932645b2b8d9cfa8929eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114433017847987872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +276,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponTarget: 2
   _weaponConfig: {fileID: 11400000, guid: 3b070f54a722f4e40bd3646eaa93a8dd, type: 2}
+--- !u!114 &114847418845000640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091871099331152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148e5c66753168c48b4e182ad468121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePower: 20
 --- !u!114 &114913190432258678
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215788399477812}
   - component: {fileID: 114621046819148076}
+  - component: {fileID: 114199838297785092}
   m_Layer: 0
   m_Name: WeaponContainer
   m_TagString: Untagged
@@ -150,6 +151,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponTarget: 2
   _weaponConfig: {fileID: 11400000, guid: 3b070f54a722f4e40bd3646eaa93a8dd, type: 2}
+--- !u!114 &114199838297785092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503428984035048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402d65db8476dfb4abf2b57a475c1cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114621046819148076
 MonoBehaviour:
   m_ObjectHideFlags: 1
