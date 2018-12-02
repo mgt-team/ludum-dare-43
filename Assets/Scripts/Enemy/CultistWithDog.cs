@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogToSacrifice : EnemyBehaviorController
+public class CultistWithDog : EnemyBehaviorController
 {
 
     [SerializeField]
@@ -17,9 +17,16 @@ public class DogToSacrifice : EnemyBehaviorController
     [SerializeField]
     private GameObject _dog;
 
+    private GameObject _player;
+    
     public override void SetTarget(Transform targetTransform)
     {
         _target = targetTransform;
+    }
+
+    public override void SetPlayer(GameObject player)
+    {
+        _player = player;
     }
 
     void Update()
@@ -38,4 +45,6 @@ public class DogToSacrifice : EnemyBehaviorController
     {
         Instantiate(_dog, _target.position, Quaternion.identity);
     }
+    
+    
 }
