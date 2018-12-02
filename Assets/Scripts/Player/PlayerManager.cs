@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour
     
     [SerializeField]
     private Player _player;
+
+    [SerializeField]
+    private SoundManager _soundManager;
     
     private MoveController _moveController;
     private Animator _animator;
