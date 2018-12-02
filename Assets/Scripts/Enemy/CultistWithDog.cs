@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CultistWithDog : EnemyBehaviorController
 {
-
     [SerializeField]
     private Transform _target;
 
     [SerializeField]
-    private float _zoneRadius;
+    private Enemy _cultist;
 
     [SerializeField]
     private float _fightDistance;
@@ -40,14 +39,8 @@ public class CultistWithDog : EnemyBehaviorController
             if (distance > _fightDistance)
                 transform.position = Vector2.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
             else if (distance <= _fightDistance)
-                MakeSacrifice();
-        }
-        else if(_target == null)
-        {
-            transform.position = Vector2.Lerp(transform.position, new Vector2(Screen.width, Screen.height), Time.deltaTime * _speed / 10);
-            if(Mathf.Abs(transform.position.x) > _zoneRadius || Mathf.Abs(transform.position.y) > _zoneRadius)
             {
-                Destroy(gameObject);
+                MakeSacrifice();
             }
         }
     }
@@ -56,7 +49,8 @@ public class CultistWithDog : EnemyBehaviorController
     {
         Instantiate(_dog, _target.position, Quaternion.identity);
         _target = null;
-
+        var startPos = transform.position;
+        GetComponent<Enemy>().SetType(EnemyTypeEnum.Cultist);
     }
 
 }
