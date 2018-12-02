@@ -17,7 +17,7 @@ public class CommonDamageEffect : DamageEffect
     private void DamageForce(DamageInfo damageInfo)
     {
         Blinking();
-        transform.position = Vector2.MoveTowards(transform.position, -damageInfo.AssaulterPosition * damageInfo.DamageCount * _damagePower, Time.deltaTime * damageInfo.DamageCount * _damagePower);
+        //transform.position = Vector2.MoveTowards(transform.position, -damageInfo.AssaulterPosition * damageInfo.DamageCount * _damagePower, Time.deltaTime * damageInfo.DamageCount * _damagePower);
     }
 
     private void Blinking()
@@ -25,7 +25,7 @@ public class CommonDamageEffect : DamageEffect
         _animator.SetTrigger(WeaponAnimationConsts.Damage);
     }
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
