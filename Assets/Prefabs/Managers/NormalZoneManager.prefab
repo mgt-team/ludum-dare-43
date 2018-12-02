@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemies:
   - {fileID: 114401665301565188, guid: 31c3972952a57404c852fdd1fc4a08b2, type: 2}
+  - {fileID: 114890664022919438, guid: c2e3f15788d92a04a8161ed5dbbf222b, type: 2}
+  - {fileID: 114890664022919438, guid: fad4859d833e6084face8e3d2a91464f, type: 2}
   _distanceOfGenerating: 5
   _enemyManager: {fileID: 0}
   _generatingTime: 5
