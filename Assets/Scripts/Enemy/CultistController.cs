@@ -65,7 +65,7 @@ public class CultistController : EnemyBehaviorController {
     {
         var dog = Instantiate(_dog, _target.position, Quaternion.identity).GetComponent<Dog>();
         _target = null;
-        GetComponent<SpriteRenderer>().sprite = _afterSacrifice;
+        GetComponent<Animator>().SetTrigger("LostDog");
         var enemy = GetComponent<Enemy>();
         enemy.SetType(EnemyTypeEnum.Cultist);
         enemy.PiktogramController.DoSacrifice(dog);
