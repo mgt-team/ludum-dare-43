@@ -2,5 +2,6 @@
 {
     Player, 
     Zone,
-    Enemy
+    Enemy,
+    SacrificePoint
 }
