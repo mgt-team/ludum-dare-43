@@ -92,10 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d32b3842e059f41bc949d441fb2c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _afterSacrifice: {fileID: 0}
   _target: {fileID: 0}
   _fightDistance: 3
   _speed: 1
   _damageConfig: {fileID: 11400000, guid: 1920f52403ff0044fbd3fbbcd934d8b4, type: 2}
+  _dog: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!114 &114335566180704972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +125,7 @@ MonoBehaviour:
   _type: 0
   _target: {fileID: 0}
   _enemyBehaviorController: {fileID: 114252941671027468}
+  _weaponContainer: {fileID: 0}
 --- !u!114 &114523867475914172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dab03d538cd505408aead096f8ae285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationTimer: 0
 --- !u!114 &114558794161372658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134346111
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300004, guid: c24028ca5d43d844f8f8a2b2210c7077, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
