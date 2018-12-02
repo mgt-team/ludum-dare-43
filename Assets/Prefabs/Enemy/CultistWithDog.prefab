@@ -21,13 +21,14 @@ GameObject:
   - component: {fileID: 4578403087744104}
   - component: {fileID: 212763926279208568}
   - component: {fileID: 70940935529265152}
-  - component: {fileID: 114776835048030422}
+  - component: {fileID: 114074332628590358}
   - component: {fileID: 114085734186953190}
   - component: {fileID: 114431190484429744}
   - component: {fileID: 114023756981377186}
   - component: {fileID: 114060787954490958}
   - component: {fileID: 114490132140971380}
   - component: {fileID: 95010857756479820}
+  - component: {fileID: 114000097225868422}
   m_Layer: 0
   m_Name: CultistWithDog
   m_TagString: Enemy
@@ -72,7 +73,7 @@ Animator:
   m_GameObject: {fileID: 1060681936960174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 246ae2442f8ce8c40afbe2b902750c29, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -81,6 +82,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114000097225868422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1060681936960174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148e5c66753168c48b4e182ad468121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePower: 5
 --- !u!114 &114023756981377186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +118,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damagePower: 20
+--- !u!114 &114074332628590358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1060681936960174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e23ee346fd0fec42b32477b7a68c4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _fightDistance: 3
+  _speed: 1
+  _dog: {fileID: 0}
 --- !u!114 &114085734186953190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _target: {fileID: 0}
-  _enemyBehaviorController: {fileID: 114776835048030422}
+  _enemyBehaviorController: {fileID: 0}
 --- !u!114 &114431190484429744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,21 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dab03d538cd505408aead096f8ae285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114776835048030422
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1060681936960174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d32b3842e059f41bc949d441fb2c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _fightDistance: 3
-  _speed: 1
-  _damageConfig: {fileID: 11400000, guid: 1920f52403ff0044fbd3fbbcd934d8b4, type: 2}
 --- !u!212 &212763926279208568
 SpriteRenderer:
   m_ObjectHideFlags: 1

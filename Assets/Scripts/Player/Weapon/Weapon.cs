@@ -46,4 +46,14 @@ public class Weapon : MonoBehaviour
 			damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
 		}
 	}
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (InAttack && TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
+        {
+            Debug.Log("Weapon beats " + other.gameObject.name);
+            var damageReceiver = other.gameObject.GetComponent<DamageReceiver>();
+            damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
+        }
+    }
 }
