@@ -17,6 +17,8 @@ public class DamageReceiver : MonoBehaviour
 	public void ReceiveDamage(DamageInfo damageInfo)
 	{
 		_liveble.DecreaseHp(damageInfo.DamageCount);
+		if (!_liveble.IsAlive()) return;
+		
 		if (_damageEffect == null)
 		{
 			Debug.LogError("There is no damage effect for " + gameObject.name);
