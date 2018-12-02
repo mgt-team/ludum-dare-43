@@ -23,7 +23,10 @@ public class Enemy : MonoBehaviour {
         _liveble.InitHp();
         
         SetTarget(enemyInitInfo.Target);
-        _weaponContainer.GetComponent<PlayerAngleGetter>().Player = enemyInitInfo.Player;
+        if (_weaponContainer != null)
+        {
+            _weaponContainer.GetComponent<PlayerAngleGetter>().Player = enemyInitInfo.Player;
+        }
     }
     
     public void SetTarget(Transform target)

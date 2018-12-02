@@ -37,6 +37,9 @@ public class CultistController : EnemyBehaviorController {
 
     private void Attack()
     {
-        _weapon.Attack();
+	    if (_weapon != null)
+	    {
+		    _weapon.Attack();
+	    }
     }
 }
