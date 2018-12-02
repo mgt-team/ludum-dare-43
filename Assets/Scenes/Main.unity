@@ -402,6 +402,16 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5e4982bc013ed03418f95a92e2f54e5c, type: 2}
+    - target: {fileID: 61875796402486478, guid: 7f22d59fa4e973b42bb697e074624c98,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516739574523044, guid: 7f22d59fa4e973b42bb697e074624c98,
+        type: 2}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f22d59fa4e973b42bb697e074624c98, type: 2}
   m_IsPrefabAsset: 0
