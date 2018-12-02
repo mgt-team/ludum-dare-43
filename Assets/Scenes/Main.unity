@@ -520,7 +520,7 @@ Prefab:
         type: 2}
       propertyPath: _enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 114085734186953190, guid: 9f159f40c4cf3e940ad91d2bdc38b9e3,
+      objectReference: {fileID: 114890664022919438, guid: c2e3f15788d92a04a8161ed5dbbf222b,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34fb927c2a28ad74cbcaaf7599ece7cc, type: 2}
