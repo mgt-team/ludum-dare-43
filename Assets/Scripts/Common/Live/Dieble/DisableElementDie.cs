@@ -11,6 +11,7 @@ public class DisableElementDie : Dieble {
 
 	public override void Die()
 	{
+        GetComponent<Animator>().SetTrigger("Die");
         _timer = _animationTimer;
         _isDie = false;
 		//gameObject.SetActive(false);
