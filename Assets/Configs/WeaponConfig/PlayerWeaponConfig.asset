@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: PlayerWeaponConfig
   m_EditorClassIdentifier: 
   WeaponDamage: 20
-  WeaponAttackAnimationTime: 0.7
+  WeaponAttackAnimationTime: 0.6

@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
 	
 	private Animator _animator;
 	private float _currentAttackAnimationTime = 0;
+	private bool _attackCompleted = false;
 	
 	public bool InAttack { get; private set; }
 
@@ -23,37 +24,46 @@ public class Weapon : MonoBehaviour
 		if (_currentAttackAnimationTime <= 0)
 		{
 			InAttack = false;
+			_attackCompleted = false;
 		}
 		else
 		{
-			_currentAttackAnimationTime -= Time.deltaTime;
+			_currentAttackAnimationTime -= Time.deltaTime;		
 		}
 	}
 
 	public void Attack()
 	{
-		_animator.SetTrigger(WeaponAnimationConsts.Attack);
+		if (InAttack) return;
+		_animator.SetTrigger(AnimationConsts.Attack);
 		InAttack = true;
 		_currentAttackAnimationTime = _weaponConfig.WeaponAttackAnimationTime;
+		_attackCompleted = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (InAttack && TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
+		CheckAttackTarget(other.gameObject);
+	}
+
+	private void OnTriggerStay2D(Collider2D other)
+    {
+	    CheckAttackTarget(other.gameObject);
+    }
+
+	private void CheckAttackTarget(GameObject target)
+	{
+		if (InAttack && !_attackCompleted && TagManager.CompareGameObjectTag(target, _weaponTarget))
 		{
-			Debug.Log("Weapon beats " + other.gameObject.name);
-			var damageReceiver = other.gameObject.GetComponent<DamageReceiver>();
-			damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
+			GiveDamage(target);
+			_attackCompleted = true;
 		}
 	}
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (InAttack && TagManager.CompareGameObjectTag(other.gameObject, _weaponTarget))
-        {
-            Debug.Log("Weapon beats " + other.gameObject.name);
-            var damageReceiver = other.gameObject.GetComponent<DamageReceiver>();
-            damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
-        }
-    }
+	private void GiveDamage(GameObject target)
+	{
+		Debug.Log("Weapon beats " + target.name);
+		var damageReceiver = target.GetComponent<DamageReceiver>();
+		damageReceiver.ReceiveDamage(new DamageInfo(_weaponConfig.WeaponDamage, transform.position));
+	}
 }
