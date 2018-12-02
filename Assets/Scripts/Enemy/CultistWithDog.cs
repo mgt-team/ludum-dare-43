@@ -9,6 +9,9 @@ public class CultistWithDog : EnemyBehaviorController
     private Transform _target;
 
     [SerializeField]
+    private float _zoneRadius;
+
+    [SerializeField]
     private float _fightDistance;
 
     [SerializeField]
@@ -24,10 +27,10 @@ public class CultistWithDog : EnemyBehaviorController
         _target = targetTransform;
     }
 
-    public override void SetPlayer(GameObject player)
+    /*public override void SetPlayer(GameObject player)
     {
         _player = player;
-    }
+    }*/
 
     void Update()
     {
@@ -39,12 +42,21 @@ public class CultistWithDog : EnemyBehaviorController
             else if (distance <= _fightDistance)
                 MakeSacrifice();
         }
+        else if(_target == null)
+        {
+            transform.position = Vector2.Lerp(transform.position, new Vector2(Screen.width, Screen.height), Time.deltaTime * _speed / 10);
+            if(Mathf.Abs(transform.position.x) > _zoneRadius || Mathf.Abs(transform.position.y) > _zoneRadius)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void MakeSacrifice()
     {
         Instantiate(_dog, _target.position, Quaternion.identity);
+        _target = null;
+
     }
-    
-    
+
 }

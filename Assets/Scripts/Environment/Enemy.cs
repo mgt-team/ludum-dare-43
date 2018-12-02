@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public delegate void MethoodContainer(Enemy enemy);
+    public event MethoodContainer TypeChanged;
+
     [SerializeField]
     private EnemyTypeEnum _type;
 
@@ -40,5 +43,11 @@ public class Enemy : MonoBehaviour {
     public EnemyTypeEnum GetType()
     {
         return _type;
+    }
+
+    public void SetType(EnemyTypeEnum typeEnum)
+    {
+        _type = typeEnum;
+        TypeChanged(GetComponent<Enemy>());
     }
 }
