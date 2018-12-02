@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c36f0a2bbd8c1147abff6722e0f79fe, type: 3}
   m_Name: CultistHpConfig
   m_EditorClassIdentifier: 
-  Hp: 20
+  Hp: 40
