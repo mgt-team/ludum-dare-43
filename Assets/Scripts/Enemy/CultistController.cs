@@ -55,7 +55,7 @@ public class CultistController : EnemyBehaviorController {
 
     private void Attack()
     {
-	    if (_weapon != null)
+	    if (_weapon != null && _weapon.enabled)
 	    {
 		    _weapon.Attack();
 	    }
@@ -69,5 +69,6 @@ public class CultistController : EnemyBehaviorController {
         var enemy = GetComponent<Enemy>();
         enemy.SetType(EnemyTypeEnum.Cultist);
         enemy.PiktogramController.DoSacrifice(dog);
+        _weapon.gameObject.SetActive(true);
     }
 }
