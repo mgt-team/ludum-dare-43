@@ -22,7 +22,7 @@ public class CommonDamageEffect : DamageEffect
 
     private void Blinking()
     {
-        _animator.SetTrigger(WeaponAnimationConsts.Damage);
+        _animator.SetTrigger(AnimationConsts.Damage);
     }
 
     private void Awake()

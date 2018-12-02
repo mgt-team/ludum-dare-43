@@ -63,11 +63,11 @@ public class CultistController : EnemyBehaviorController {
 
     private void MakeSacrifice()
     {
-        Instantiate(_dog, _target.position, Quaternion.identity);
+        var dog = Instantiate(_dog, _target.position, Quaternion.identity).GetComponent<Dog>();
         _target = null;
         GetComponent<SpriteRenderer>().sprite = _afterSacrifice;
         var enemy = GetComponent<Enemy>();
         enemy.SetType(EnemyTypeEnum.Cultist);
-        enemy.PiktogramController.DoSacrifice();
+        enemy.PiktogramController.DoSacrifice(dog);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class PiktogramController : MonoBehaviour
 {
 
+	[SerializeField] private FirePlace _firePlace;
+	
 	private Animator _animator;
 	
 	// Use this for initialization
@@ -18,8 +20,10 @@ public class PiktogramController : MonoBehaviour
 		
 	}
 
-	public void DoSacrifice()
+	public void DoSacrifice(Dog dog)
 	{
-		_animator.SetTrigger(WeaponAnimationConsts.PiktogramLight);
+		_animator.SetTrigger(AnimationConsts.PiktogramLight);
+		_firePlace.Fire();
+		dog.BeSacrificed();
 	}
 }
