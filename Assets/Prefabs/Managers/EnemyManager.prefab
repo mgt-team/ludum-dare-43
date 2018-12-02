@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zoneCenter: {fileID: 0}
   _player: {fileID: 0}
+  _piktogramController: {fileID: 0}

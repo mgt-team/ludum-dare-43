@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 4153177251955780}
   - component: {fileID: 212521409571482234}
   - component: {fileID: 95104839644164468}
+  - component: {fileID: 114032543246874052}
   m_Layer: 0
   m_Name: piktogram-light
   m_TagString: Untagged
@@ -118,6 +119,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114032543246874052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791461884876346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d6408c83f21bf48801b4258d5870ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212311143639437838
 SpriteRenderer:
   m_ObjectHideFlags: 1
