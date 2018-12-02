@@ -26,7 +26,7 @@ public class EnemyManager : MonoBehaviour {
 
     public void InitEnemy(Enemy enemy)
     {
-        var enemyInitInfo = new EnemyInitInfo(GetEnemyTarget(enemy.GetType()));
+        var enemyInitInfo = new EnemyInitInfo(GetEnemyTarget(enemy.GetType()), _player.gameObject);
         enemy.Init(enemyInitInfo);
     }
 

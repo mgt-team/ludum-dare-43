@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField]
     private EnemyBehaviorController _enemyBehaviorController;
+
+    [SerializeField] private GameObject _weaponContainer;
     
     private Liveble _liveble;
 
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour {
         _liveble.InitHp();
         
         SetTarget(enemyInitInfo.Target);
+        _weaponContainer.GetComponent<PlayerAngleGetter>().Player = enemyInitInfo.Player;
     }
     
     public void SetTarget(Transform target)
