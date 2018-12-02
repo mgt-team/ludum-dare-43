@@ -409,7 +409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1091871099331152, guid: 7f22d59fa4e973b42bb697e074624c98, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212361027023667298, guid: 7f22d59fa4e973b42bb697e074624c98,
         type: 2}
@@ -703,6 +703,11 @@ Prefab:
       propertyPath: _firePlace
       value: 
       objectReference: {fileID: 2098645796}
+    - target: {fileID: 212311143639437838, guid: ef9c503d310193c4a9c1f4b562e34f16,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c503d310193c4a9c1f4b562e34f16, type: 2}
   m_IsPrefabAsset: 0
