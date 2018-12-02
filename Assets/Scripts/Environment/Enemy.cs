@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour {
             _enemyBehaviorController.SetTarget(_target);
     }
 
-    public EnemyTypeEnum GetType()
+    public EnemyTypeEnum GetTypeEnum()
     {
         return _type;
     }

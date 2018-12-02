@@ -5,6 +5,9 @@ using UnityEngine;
 public class CultistController : EnemyBehaviorController {
 
     [SerializeField]
+    private Sprite _afterSacrifice;
+
+    [SerializeField]
     private Transform _target;
 
     [SerializeField]
@@ -15,8 +18,11 @@ public class CultistController : EnemyBehaviorController {
 
     [SerializeField]
     private DamageConfig _damageConfig;
-    
-	[SerializeField] private Weapon _weapon;
+
+    [SerializeField]
+    private GameObject _dog;
+
+    [SerializeField] private Weapon _weapon;
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,7 +32,7 @@ public class CultistController : EnemyBehaviorController {
             if (distance > _fightDistance)
                 transform.position = Vector2.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
             else if (distance <= _fightDistance)
-                Attack();
+                DoAction();
         }
 	}
 
@@ -35,11 +41,31 @@ public class CultistController : EnemyBehaviorController {
 		_target = targetTransform;
 	}
 
+    private void DoAction()
+    {
+        if(GetComponent<Enemy>().GetTypeEnum() == EnemyTypeEnum.CultistWithDog)
+        {
+            MakeSacrifice();
+        }
+        else
+        {
+            Attack();
+        }
+    }
+
     private void Attack()
     {
 	    if (_weapon != null)
 	    {
 		    _weapon.Attack();
 	    }
+    }
+
+    private void MakeSacrifice()
+    {
+        Instantiate(_dog, _target.position, Quaternion.identity);
+        _target = null;
+        GetComponent<SpriteRenderer>().sprite = _afterSacrifice;
+        GetComponent<Enemy>().SetType(EnemyTypeEnum.Cultist);
     }
 }
