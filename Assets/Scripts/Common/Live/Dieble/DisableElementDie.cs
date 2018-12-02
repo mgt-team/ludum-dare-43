@@ -8,13 +8,17 @@ public class DisableElementDie : Dieble {
     private float _animationTimer;
     private bool _isDie;
     private float _timer;
+    private bool _alreadyDie = false;
 
 	public override void Die()
 	{
+	    if (_alreadyDie) return;
+	    
         GetComponent<Animator>().SetTrigger("Die");
         _timer = _animationTimer;
         _isDie = false;
-		//gameObject.SetActive(false);
+	    _alreadyDie = true;
+	    //gameObject.SetActive(false);
 	}
 
     private void Update()
@@ -29,6 +33,6 @@ public class DisableElementDie : Dieble {
             _isDie = true;
         }
         if (_timer < 0 && _isDie)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
 }
