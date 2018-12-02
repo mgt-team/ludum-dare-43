@@ -237,6 +237,20 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 212857602280640140, guid: fed63b0dfcafd3a438e8a4271365d236,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d915e85ed9f5731449cf83d41a0d90c8,
+        type: 3}
+    - target: {fileID: 4562161220424926, guid: fed63b0dfcafd3a438e8a4271365d236, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562161220424926, guid: fed63b0dfcafd3a438e8a4271365d236, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed63b0dfcafd3a438e8a4271365d236, type: 2}
   m_IsPrefabAsset: 0
@@ -362,6 +376,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114802961438170396, guid: dfaad08c56194454f96105b3e3de7c7b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfaad08c56194454f96105b3e3de7c7b, type: 2}
   m_IsPrefabAsset: 0
@@ -423,11 +442,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4107455222542912, guid: 7f22d59fa4e973b42bb697e074624c98,
     type: 2}
   m_PrefabInternal: {fileID: 1091565044}
+--- !u!1 &1544645393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1689687438957548, guid: 3442916c9ad24894f9ab36fc826965d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 603242355}
 --- !u!4 &1544645394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4813703133153630, guid: 3442916c9ad24894f9ab36fc826965d1,
     type: 2}
   m_PrefabInternal: {fileID: 603242355}
+--- !u!114 &1544645395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544645393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b566bd44e6a77e6479826a082571e40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1604603153
 Prefab:
   m_ObjectHideFlags: 0
