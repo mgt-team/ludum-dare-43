@@ -18,12 +18,16 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] private GameObject _weaponContainer;
     
+    public PiktogramController PiktogramController { get; set; }
+    
     private Liveble _liveble;
 
     public void Init(EnemyInitInfo enemyInitInfo)
     {
         _liveble = GetComponent<Liveble>();
         _liveble.InitHp();
+
+        PiktogramController = enemyInitInfo.Piktogram;
         
         SetTarget(enemyInitInfo.Target);
         if (_weaponContainer != null)

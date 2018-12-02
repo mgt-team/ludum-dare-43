@@ -23,8 +23,8 @@ public class CultistController : EnemyBehaviorController {
     private GameObject _dog;
 
     [SerializeField] private Weapon _weapon;
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
 	void Update () {
         if (_target != null)
         {
@@ -66,6 +66,8 @@ public class CultistController : EnemyBehaviorController {
         Instantiate(_dog, _target.position, Quaternion.identity);
         _target = null;
         GetComponent<SpriteRenderer>().sprite = _afterSacrifice;
-        GetComponent<Enemy>().SetType(EnemyTypeEnum.Cultist);
+        var enemy = GetComponent<Enemy>();
+        enemy.SetType(EnemyTypeEnum.Cultist);
+        enemy.PiktogramController.DoSacrifice();
     }
 }

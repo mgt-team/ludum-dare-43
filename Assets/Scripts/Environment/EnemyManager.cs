@@ -10,6 +10,8 @@ public class EnemyManager : MonoBehaviour {
     [SerializeField]
     private Transform _player;
 
+    [SerializeField] private PiktogramController _piktogramController;
+
     private Enemy _enemy;
 
     public Transform GetEnemyTarget(EnemyTypeEnum enemyType)
@@ -26,7 +28,7 @@ public class EnemyManager : MonoBehaviour {
 
     public void InitEnemy(Enemy enemy)
     {
-        var enemyInitInfo = new EnemyInitInfo(GetEnemyTarget(enemy.GetTypeEnum()), _player.gameObject);
+        var enemyInitInfo = new EnemyInitInfo(GetEnemyTarget(enemy.GetTypeEnum()), _player.gameObject, _piktogramController);
         enemy.Init(enemyInitInfo);
         enemy.TypeChanged += Enemy_TypeChanged;
     }
